@@ -24,6 +24,9 @@ npm run test
 ```
 npm run lint
 ```
+### 1.使用Mint-Ui完成header
+### 2.使用MUi完成tabbar
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
