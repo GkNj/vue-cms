@@ -13,7 +13,8 @@
     "vue": "^2.6.10",
     "vue-router": "latest",
     "axios": "latest",
-    "vue-resource": "latest"
+    "vue-resource": "latest",
+    "moment": "latest"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",

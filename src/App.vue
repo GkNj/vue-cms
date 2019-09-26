@@ -2,7 +2,11 @@
     <div id="app" class="app-container">
         <!--顶部的header区域-->
 
-        <mt-header fixed title="凯哥·vue项目"></mt-header>
+        <mt-header fixed title="凯哥·vue项目">
+            <span slot="left" @click="goBack" v-show="flag">
+        <mt-button icon="back">返回</mt-button>
+      </span>
+        </mt-header>
         <br>
 
         <!--        中间路由的 router-view 区域-->
@@ -38,13 +42,35 @@
 
     export default {
         name: 'app',
-
+        data() {
+            return {
+                flag: false
+            }
+        },
+        methods: {
+            goBack() {
+                this.$router.go(-1)
+            }
+        },
+        watch: {
+            "$route.path": function (newVal) {
+                if (newVal === '/home') {
+                    this.flag = false
+                } else {
+                    this.flag = true
+                }
+            }
+        },
+        created() {
+            this.flag = this.$route.path === '/home' ? false : true
+        }
     }
 </script>
 
 <style lang="scss" scoped>
     .app-container {
         padding-top: 15px;
+        padding-bottom: 50px;
         overflow-x: hidden;
     }
 
@@ -53,7 +79,9 @@
         transform: translateX(100%);
         position: absolute;
     }
-
+    .mint-header{
+        z-index: 99;
+    }
     .v-leave-to {
         opacity: 0;
         transform: translateX(-100%);

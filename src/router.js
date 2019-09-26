@@ -1,10 +1,11 @@
 import VueRouter from 'vue-router'
 
-import HomeContaine from "@/components/tabbar/HomeContaine";
-import MemberContaine from "@/components/tabbar/MemberContaine";
-import ShopCarContaine from "@/components/tabbar/ShopCarContaine";
-import SearchContaine from "@/components/tabbar/SearchContaine";
-import newsList from "@/components/news/NewsList"
+import HomeContainer from "./components/tabbar/HomeContainer";
+import MemberContainer from "./components/tabbar/MemberContainer";
+import ShopCarContainer from "./components/tabbar/ShopCarContainer";
+import SearchContainer from "./components/tabbar/SearchContainer";
+import newsList from "./components/news/NewsList"
+import newsInfo from "./components/news/NewsInfo"
 
 const router = new VueRouter({
     mode: 'history',
@@ -12,20 +13,24 @@ const router = new VueRouter({
         {path: '/', redirect: '/home'},
         {
             path: '/home',
-            component: HomeContaine
+            component: HomeContainer
         },
         {path: '/home/newsList', component: newsList},
         {
             path: '/member',
-            component: MemberContaine
+            component: MemberContainer
         },
         {
             path: '/shopcar',
-            component: ShopCarContaine
+            component: ShopCarContainer
         },
         {
             path: '/search',
-            component: SearchContaine
+            component: SearchContainer
+        },
+        {
+            path: '/home/newsInfo/:id',
+            component: newsInfo
         }
     ],
     linkActiveClass: 'mui-active'//覆盖默认路由的高亮的类，默认的类叫做 router-link-active
