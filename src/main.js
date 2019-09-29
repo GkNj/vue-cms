@@ -10,7 +10,6 @@ import 'mint-ui/lib/style.css'
 //导入vue-resource
 import VueResource from 'vue-resource'
 import moment from 'moment'
-
 Vue.filter('dateFormat', function (dataStr, pattern = "YYYY-MM-DD HH:mm:ss") {
     return moment(dataStr).format(pattern)
 })

@@ -11,7 +11,7 @@
 <!--        内容区域-->
         <div class="content">{{newsInfo.content}}</div>
 <!--        评论子组件-->
-        <comment-box></comment-box>
+        <comment-box :id="this.$route.params.id"></comment-box>
     </div>
 </template>
 

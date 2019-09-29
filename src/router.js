@@ -6,6 +6,8 @@ import ShopCarContainer from "./components/tabbar/ShopCarContainer";
 import SearchContainer from "./components/tabbar/SearchContainer";
 import newsList from "./components/news/NewsList"
 import newsInfo from "./components/news/NewsInfo"
+import photoList from "./components/photo/photoList"
+import GoodsList from "./components/goods/GoodsList";
 
 const router = new VueRouter({
     mode: 'history',
@@ -31,6 +33,14 @@ const router = new VueRouter({
         {
             path: '/home/newsInfo/:id',
             component: newsInfo
+        },
+        {
+            path: '/home/photoList',
+            component: photoList
+        },
+        {
+            path: '/home/goodsList',
+            component: GoodsList
         }
     ],
     linkActiveClass: 'mui-active'//覆盖默认路由的高亮的类，默认的类叫做 router-link-active
